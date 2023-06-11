@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PersonalInfo from './components/PersonalInfo';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             mode: 'edit',
@@ -25,6 +26,7 @@ class App extends Component {
                 <button onClick={this.handleModeChange}>
                     {mode === 'edit' ? 'Preview' : 'Edit'}
                 </button>
+                <PersonalInfo mode={mode} />
             </div>
         );
     }
