@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PersonalInfo from './components/PersonalInfo';
+import EditMode from './components/editMode/EditMode';
+import PreviewMode from './components/previewMode/PreviewMode';
 
 class App extends Component {
     constructor() {
@@ -7,9 +8,18 @@ class App extends Component {
 
         this.state = {
             mode: 'edit',
+            inputs: {
+                firstName: '',
+                lastName: '',
+                location: '',
+                phoneNumber: '',
+                emailAddress: '',
+                bio: '',
+            },
         };
 
         this.handleModeChange = this.handleModeChange.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleModeChange() {
@@ -18,15 +28,29 @@ class App extends Component {
         }));
     }
 
+    handleInputChange(e) {
+        const { name, value } = e.target;
+        this.setState((prevState) => ({
+            inputs: { ...prevState.inputs, [name]: value },
+        }));
+    }
+
     render() {
-        const { mode } = this.state;
+        const { mode, inputs } = this.state;
 
         return (
             <div>
                 <button onClick={this.handleModeChange}>
                     {mode === 'edit' ? 'Preview' : 'Edit'}
                 </button>
-                <PersonalInfo mode={mode} />
+                {mode === 'edit' ? (
+                    <EditMode
+                        inputs={inputs}
+                        handleInputChange={this.handleInputChange}
+                    />
+                ) : (
+                    <PreviewMode inputs={inputs} />
+                )}
             </div>
         );
     }
