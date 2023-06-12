@@ -24,6 +24,13 @@ class App extends Component {
                     endDate: '',
                     description: '',
                 },
+                education: {
+                    school: '',
+                    fieldOfStudy: '',
+                    qualification: '',
+                    enrollmentDate: '',
+                    graduationDate: '',
+                },
             },
         };
 

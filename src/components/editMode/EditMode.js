@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PersonalInfo from './PersonalInfo';
 import Experience from './Experience';
+import Education from './Education';
 
 class EditMode extends Component {
     render() {
         const { inputs, handleInputChange } = this.props;
-        const { personalInfo, experience } = inputs;
+        const { personalInfo, experience, education } = inputs;
 
         return (
             <div>
@@ -15,6 +16,10 @@ class EditMode extends Component {
                 />
                 <Experience
                     inputs={experience}
+                    handleInputChange={handleInputChange}
+                />
+                <Education
+                    inputs={education}
                     handleInputChange={handleInputChange}
                 />
             </div>
