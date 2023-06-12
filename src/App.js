@@ -9,12 +9,21 @@ class App extends Component {
         this.state = {
             mode: 'edit',
             inputs: {
-                firstName: '',
-                lastName: '',
-                location: '',
-                phoneNumber: '',
-                emailAddress: '',
-                bio: '',
+                personalInfo: {
+                    firstName: '',
+                    lastName: '',
+                    location: '',
+                    phoneNumber: '',
+                    emailAddress: '',
+                    bio: '',
+                },
+                experience: {
+                    company: '',
+                    title: '',
+                    startDate: '',
+                    endDate: '',
+                    description: '',
+                },
             },
         };
 
@@ -30,8 +39,13 @@ class App extends Component {
 
     handleInputChange(e) {
         const { name, value } = e.target;
+        const component = e.target.getAttribute('data-component');
+
         this.setState((prevState) => ({
-            inputs: { ...prevState.inputs, [name]: value },
+            inputs: {
+                ...prevState.inputs,
+                [component]: { ...prevState.inputs[component], [name]: value },
+            },
         }));
     }
 
