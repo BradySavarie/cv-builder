@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EditMode from './components/editMode/EditMode';
 import PreviewMode from './components/previewMode/PreviewMode';
+import uniquid from 'uniquid';
 
 class App extends Component {
     constructor() {
@@ -9,37 +10,52 @@ class App extends Component {
         this.state = {
             mode: 'edit',
             inputs: {
-                personalInfo: {
-                    firstName: '',
-                    lastName: '',
-                    location: '',
-                    phoneNumber: '',
-                    emailAddress: '',
-                    bio: '',
-                },
-                experience: {
-                    company: '',
-                    title: '',
-                    startDate: '',
-                    endDate: '',
-                    description: '',
-                },
-                education: {
-                    school: '',
-                    fieldOfStudy: '',
-                    qualification: '',
-                    enrollmentDate: '',
-                    graduationDate: '',
-                },
-                projects: {
-                    title: '',
-                    description: '',
-                    liveLink: '',
-                    repoLink: '',
-                },
-                skills: {
-                    description: '',
-                },
+                personalInfo: [
+                    {
+                        key: uniquid(),
+                        firstName: '',
+                        lastName: '',
+                        location: '',
+                        phoneNumber: '',
+                        emailAddress: '',
+                        bio: '',
+                    },
+                ],
+                experience: [
+                    {
+                        key: '',
+                        company: '',
+                        title: '',
+                        startDate: '',
+                        endDate: '',
+                        description: '',
+                    },
+                ],
+                education: [
+                    {
+                        key: '',
+                        school: '',
+                        fieldOfStudy: '',
+                        qualification: '',
+                        enrollmentDate: '',
+                        graduationDate: '',
+                    },
+                ],
+                projects: [
+                    {
+                        key: '',
+                        title: '',
+                        description: '',
+                        liveLink: '',
+                        repoLink: '',
+                    },
+                ],
+                skills: [
+                    {
+                        key: '',
+                        description: '',
+                    },
+                ],
             },
         };
 
@@ -56,13 +72,25 @@ class App extends Component {
     handleInputChange(e) {
         const { name, value } = e.target;
         const component = e.target.getAttribute('data-component');
+        const key = e.target.form.getAttribute('data-key');
 
-        this.setState((prevState) => ({
-            inputs: {
-                ...prevState.inputs,
-                [component]: { ...prevState.inputs[component], [name]: value },
-            },
-        }));
+        this.setState((prevState) => {
+            console.log(prevState);
+            const prevComponentArr = prevState.inputs[component];
+            const updatedComponentArr = prevComponentArr.map((item) => {
+                if (item.key === key) {
+                    return { ...item, [name]: value };
+                }
+                return item;
+            });
+
+            return {
+                inputs: {
+                    ...prevState.inputs,
+                    [component]: updatedComponentArr,
+                },
+            };
+        });
     }
 
     render() {
