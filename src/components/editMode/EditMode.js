@@ -3,11 +3,13 @@ import PersonalInfo from './PersonalInfo';
 import Experience from './Experience';
 import Education from './Education';
 import Projects from './Projects';
+import Skills from './Skills';
 
 class EditMode extends Component {
     render() {
         const { inputs, handleInputChange } = this.props;
-        const { personalInfo, experience, education, projects } = inputs;
+        const { personalInfo, experience, education, projects, skills } =
+            inputs;
 
         return (
             <div>
@@ -27,6 +29,7 @@ class EditMode extends Component {
                     inputs={projects}
                     handleInputChange={handleInputChange}
                 />
+                <Skills inputs={skills} handleInputChange={handleInputChange} />
             </div>
         );
     }

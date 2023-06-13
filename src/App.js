@@ -37,6 +37,9 @@ class App extends Component {
                     liveLink: '',
                     repoLink: '',
                 },
+                skills: {
+                    description: '',
+                },
             },
         };
 
