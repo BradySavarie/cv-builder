@@ -31,6 +31,12 @@ class App extends Component {
                     enrollmentDate: '',
                     graduationDate: '',
                 },
+                projects: {
+                    title: '',
+                    description: '',
+                    liveLink: '',
+                    repoLink: '',
+                },
             },
         };
 
