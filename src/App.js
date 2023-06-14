@@ -23,7 +23,7 @@ class App extends Component {
                 ],
                 experience: [
                     {
-                        key: '',
+                        key: uniquid(),
                         company: '',
                         title: '',
                         startDate: '',
@@ -33,7 +33,7 @@ class App extends Component {
                 ],
                 education: [
                     {
-                        key: '',
+                        key: uniquid(),
                         school: '',
                         fieldOfStudy: '',
                         qualification: '',
@@ -43,7 +43,7 @@ class App extends Component {
                 ],
                 projects: [
                     {
-                        key: '',
+                        key: uniquid(),
                         title: '',
                         description: '',
                         liveLink: '',
@@ -52,7 +52,7 @@ class App extends Component {
                 ],
                 skills: [
                     {
-                        key: '',
+                        key: uniquid(),
                         description: '',
                     },
                 ],
