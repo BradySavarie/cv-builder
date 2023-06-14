@@ -7,7 +7,12 @@ import Skills from './Skills';
 
 class EditMode extends Component {
     render() {
-        const { inputs, handleInputChange, handleAddSection } = this.props;
+        const {
+            inputs,
+            handleInputChange,
+            handleAddSection,
+            handleDeleteSection,
+        } = this.props;
         const { personalInfo, experience, education, projects, skills } =
             inputs;
 
@@ -17,26 +22,31 @@ class EditMode extends Component {
                     inputs={personalInfo}
                     handleInputChange={handleInputChange}
                     handleAddSection={handleAddSection}
+                    handleDeleteSection={handleDeleteSection}
                 />
                 <Experience
                     inputs={experience}
                     handleInputChange={handleInputChange}
                     handleAddSection={handleAddSection}
+                    handleDeleteSection={handleDeleteSection}
                 />
                 <Education
                     inputs={education}
                     handleInputChange={handleInputChange}
                     handleAddSection={handleAddSection}
+                    handleDeleteSection={handleDeleteSection}
                 />
                 <Projects
                     inputs={projects}
                     handleInputChange={handleInputChange}
                     handleAddSection={handleAddSection}
+                    handleDeleteSection={handleDeleteSection}
                 />
                 <Skills
                     inputs={skills}
                     handleInputChange={handleInputChange}
                     handleAddSection={handleAddSection}
+                    handleDeleteSection={handleDeleteSection}
                 />
             </div>
         );

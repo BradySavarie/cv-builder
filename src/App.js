@@ -62,6 +62,7 @@ class App extends Component {
         this.handleModeChange = this.handleModeChange.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleAddSection = this.handleAddSection.bind(this);
+        this.handleDeleteSection = this.handleDeleteSection.bind(this);
     }
 
     handleModeChange() {
@@ -112,6 +113,22 @@ class App extends Component {
         });
     }
 
+    handleDeleteSection(e) {
+        const component = e.target.getAttribute('data-component');
+        const key = e.target.getAttribute('data-key');
+
+        const prevComponentArr = this.state.inputs[component];
+        const newComponentArr = prevComponentArr.filter(
+            (comp) => comp.key !== key
+        );
+
+        this.setState((prevState) => {
+            return {
+                inputs: { ...prevState.inputs, [component]: newComponentArr },
+            };
+        });
+    }
+
     render() {
         const { mode, inputs } = this.state;
 
@@ -125,6 +142,7 @@ class App extends Component {
                         inputs={inputs}
                         handleInputChange={this.handleInputChange}
                         handleAddSection={this.handleAddSection}
+                        handleDeleteSection={this.handleDeleteSection}
                     />
                 ) : (
                     <PreviewMode inputs={inputs} />

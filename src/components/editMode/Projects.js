@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class Projects extends Component {
     render() {
-        const { inputs, handleInputChange, handleAddSection } = this.props;
+        const {
+            inputs,
+            handleInputChange,
+            handleAddSection,
+            handleDeleteSection,
+        } = this.props;
 
         return (
             <div>
@@ -49,6 +54,13 @@ class Projects extends Component {
                                 data-component="projects"
                             ></input>
                         </form>
+                        <button
+                            onClick={handleDeleteSection}
+                            data-key={input.key}
+                            data-component="projects"
+                        >
+                            Delete Project
+                        </button>
                     </div>
                 ))}
                 <button onClick={handleAddSection} data-component="projects">

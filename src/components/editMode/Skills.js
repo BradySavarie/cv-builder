@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class Skills extends Component {
     render() {
-        const { inputs, handleInputChange, handleAddSection } = this.props;
+        const {
+            inputs,
+            handleInputChange,
+            handleAddSection,
+            handleDeleteSection,
+        } = this.props;
 
         return (
             <div>
@@ -20,6 +25,13 @@ class Skills extends Component {
                                 data-component="skills"
                             ></input>
                         </form>
+                        <button
+                            onClick={handleDeleteSection}
+                            data-key={input.key}
+                            data-component="skills"
+                        >
+                            Delete Skill
+                        </button>
                     </div>
                 ))}
                 <button onClick={handleAddSection} data-component="skills">

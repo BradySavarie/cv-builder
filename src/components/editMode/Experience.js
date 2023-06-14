@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class Experience extends Component {
     render() {
-        const { inputs, handleInputChange, handleAddSection } = this.props;
+        const {
+            inputs,
+            handleInputChange,
+            handleAddSection,
+            handleDeleteSection,
+        } = this.props;
 
         return (
             <div>
@@ -58,6 +63,13 @@ class Experience extends Component {
                                 data-component="experience"
                             ></textarea>
                         </form>
+                        <button
+                            onClick={handleDeleteSection}
+                            data-key={input.key}
+                            data-component="experience"
+                        >
+                            Delete Experience
+                        </button>
                     </div>
                 ))}
                 <button onClick={handleAddSection} data-component="experience">

@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class Education extends Component {
     render() {
-        const { inputs, handleInputChange, handleAddSection } = this.props;
+        const {
+            inputs,
+            handleInputChange,
+            handleAddSection,
+            handleDeleteSection,
+        } = this.props;
 
         return (
             <div>
@@ -64,6 +69,13 @@ class Education extends Component {
                                 data-component="education"
                             ></input>
                         </form>
+                        <button
+                            onClick={handleDeleteSection}
+                            data-key={input.key}
+                            data-component="education"
+                        >
+                            Delete Education
+                        </button>
                     </div>
                 ))}
                 <button onClick={handleAddSection} data-component="education">
