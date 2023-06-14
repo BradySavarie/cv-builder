@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Experience extends Component {
     render() {
-        const { inputs, handleInputChange } = this.props;
+        const { inputs, handleInputChange, handleAddSection } = this.props;
 
         return (
             <div>
@@ -60,6 +60,9 @@ class Experience extends Component {
                         </form>
                     </div>
                 ))}
+                <button onClick={handleAddSection} data-component="experience">
+                    Add Experience
+                </button>
             </div>
         );
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Education extends Component {
     render() {
-        const { inputs, handleInputChange } = this.props;
+        const { inputs, handleInputChange, handleAddSection } = this.props;
 
         return (
             <div>
@@ -66,6 +66,9 @@ class Education extends Component {
                         </form>
                     </div>
                 ))}
+                <button onClick={handleAddSection} data-component="education">
+                    Add Education
+                </button>
             </div>
         );
     }

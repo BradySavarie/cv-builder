@@ -61,6 +61,7 @@ class App extends Component {
 
         this.handleModeChange = this.handleModeChange.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleAddSection = this.handleAddSection.bind(this);
     }
 
     handleModeChange() {
@@ -92,6 +93,25 @@ class App extends Component {
         });
     }
 
+    handleAddSection(e) {
+        const component = e.target.getAttribute('data-component');
+        const templateObject = this.state.inputs[component][0];
+        const newObject = { key: uniquid() };
+        for (let prop in templateObject) {
+            if (prop !== 'key') {
+                newObject[prop] = '';
+            }
+        }
+        this.setState((prevState) => {
+            return {
+                inputs: {
+                    ...prevState.inputs,
+                    [component]: [...prevState.inputs[component], newObject],
+                },
+            };
+        });
+    }
+
     render() {
         const { mode, inputs } = this.state;
 
@@ -104,6 +124,7 @@ class App extends Component {
                     <EditMode
                         inputs={inputs}
                         handleInputChange={this.handleInputChange}
+                        handleAddSection={this.handleAddSection}
                     />
                 ) : (
                     <PreviewMode inputs={inputs} />
