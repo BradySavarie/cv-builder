@@ -75,7 +75,6 @@ class App extends Component {
         const key = e.target.form.getAttribute('data-key');
 
         this.setState((prevState) => {
-            console.log(prevState);
             const prevComponentArr = prevState.inputs[component];
             const updatedComponentArr = prevComponentArr.map((item) => {
                 if (item.key === key) {

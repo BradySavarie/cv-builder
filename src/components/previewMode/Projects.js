@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 
 class Projects extends Component {
     render() {
-        const { title, description, liveLink, repoLink } = this.props.inputs;
+        const { inputs } = this.props;
 
         return (
             <div>
-                <p>{title}</p>
-                <p>{description}</p>
-                <p>{liveLink}</p>
-                <p>{repoLink}</p>
+                {inputs.map((input) => (
+                    <div key={input.key}>
+                        <p>{input.title}</p>
+                        <p>{input.description}</p>
+                        <p>{input.liveLink}</p>
+                        <p>{input.repoLink}</p>
+                    </div>
+                ))}
             </div>
         );
     }

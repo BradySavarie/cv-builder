@@ -2,21 +2,19 @@ import React, { Component } from 'react';
 
 class Education extends Component {
     render() {
-        const {
-            school,
-            fieldOfStudy,
-            qualification,
-            enrollmentDate,
-            graduationDate,
-        } = this.props.inputs;
+        const { inputs } = this.props;
 
         return (
             <div>
-                <p>{school}</p>
-                <p>{fieldOfStudy}</p>
-                <p>{qualification}</p>
-                <p>{enrollmentDate}</p>
-                <p>{graduationDate}</p>
+                {inputs.map((input) => (
+                    <div key={input.key}>
+                        <p>{input.school}</p>
+                        <p>{input.fieldOfStudy}</p>
+                        <p>{input.qualification}</p>
+                        <p>{input.enrollmentDate}</p>
+                        <p>{input.graduationDate}</p>
+                    </div>
+                ))}
             </div>
         );
     }

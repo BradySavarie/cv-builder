@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 
 class Skills extends Component {
     render() {
-        const { description } = this.props.inputs;
+        const { inputs } = this.props;
 
         return (
             <div>
-                <p>{description}</p>
+                {inputs.map((input) => (
+                    <div key={input.key}>
+                        <p>{input.description}</p>
+                    </div>
+                ))}
             </div>
         );
     }

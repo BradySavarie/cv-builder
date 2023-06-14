@@ -2,22 +2,20 @@ import React, { Component } from 'react';
 
 class PersonalInfo extends Component {
     render() {
-        const {
-            firstName,
-            lastName,
-            location,
-            phoneNumber,
-            emailAddress,
-            bio,
-        } = this.props.inputs;
+        const { inputs } = this.props;
+
         return (
             <div>
-                <p>{firstName}</p>
-                <p>{lastName}</p>
-                <p>{location}</p>
-                <p>{phoneNumber}</p>
-                <p>{emailAddress}</p>
-                <p>{bio}</p>
+                {inputs.map((input) => (
+                    <div key={input.key}>
+                        <p>{input.firstName}</p>
+                        <p>{input.lastName}</p>
+                        <p>{input.location}</p>
+                        <p>{input.phoneNumber}</p>
+                        <p>{input.emailAddress}</p>
+                        <p>{input.bio}</p>
+                    </div>
+                ))}
             </div>
         );
     }
