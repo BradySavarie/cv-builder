@@ -12,6 +12,7 @@ class EditMode extends Component {
             handleInputChange,
             handleAddSection,
             handleDeleteSection,
+            handleReset,
         } = this.props;
         const { personalInfo, experience, education, projects, skills } =
             inputs;
@@ -48,6 +49,7 @@ class EditMode extends Component {
                     handleAddSection={handleAddSection}
                     handleDeleteSection={handleDeleteSection}
                 />
+                <button onClick={handleReset}>Reset</button>
             </div>
         );
     }

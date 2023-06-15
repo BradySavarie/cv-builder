@@ -7,7 +7,7 @@ class App extends Component {
     constructor() {
         super();
 
-        this.state = {
+        this.initialState = {
             mode: 'edit',
             inputs: {
                 personalInfo: [
@@ -58,11 +58,13 @@ class App extends Component {
                 ],
             },
         };
+        this.state = this.initialState;
 
         this.handleModeChange = this.handleModeChange.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleAddSection = this.handleAddSection.bind(this);
         this.handleDeleteSection = this.handleDeleteSection.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     handleModeChange() {
@@ -129,6 +131,16 @@ class App extends Component {
         });
     }
 
+    handleReset() {
+        const formFields = document.querySelectorAll('input, textarea');
+
+        formFields.forEach((field) => {
+            field.value = '';
+        });
+
+        this.setState(this.initialState);
+    }
+
     render() {
         const { mode, inputs } = this.state;
 
@@ -143,6 +155,7 @@ class App extends Component {
                         handleInputChange={this.handleInputChange}
                         handleAddSection={this.handleAddSection}
                         handleDeleteSection={this.handleDeleteSection}
+                        handleReset={this.handleReset}
                     />
                 ) : (
                     <PreviewMode inputs={inputs} />
