@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import EditMode from './components/editMode/EditMode';
 import PreviewMode from './components/previewMode/PreviewMode';
 import uniquid from 'uniquid';
+import GlobalStyles from './components/styles/Global';
+import { PreviewContainer } from './components/styles/PreviewContainer';
+import { EditContainer } from './components/styles/EditContainer';
 
 class App extends Component {
     constructor() {
@@ -204,23 +207,30 @@ class App extends Component {
         const { mode, inputs } = this.state;
 
         return (
-            <div>
-                <button onClick={this.handleModeChange}>
-                    {mode === 'edit' ? 'Preview' : 'Edit'}
-                </button>
-                {mode === 'edit' ? (
-                    <EditMode
-                        inputs={inputs}
-                        handleInputChange={this.handleInputChange}
-                        handleAddSection={this.handleAddSection}
-                        handleDeleteSection={this.handleDeleteSection}
-                        handleReset={this.handleReset}
-                        handleCreateSample={this.handleCreateSample}
-                    />
-                ) : (
-                    <PreviewMode inputs={inputs} />
-                )}
-            </div>
+            <>
+                <GlobalStyles />
+                <div>
+                    <button onClick={this.handleModeChange}>
+                        {mode === 'edit' ? 'Preview' : 'Edit'}
+                    </button>
+                    {mode === 'edit' ? (
+                        <EditContainer>
+                            <EditMode
+                                inputs={inputs}
+                                handleInputChange={this.handleInputChange}
+                                handleAddSection={this.handleAddSection}
+                                handleDeleteSection={this.handleDeleteSection}
+                                handleReset={this.handleReset}
+                                handleCreateSample={this.handleCreateSample}
+                            />
+                        </EditContainer>
+                    ) : (
+                        <PreviewContainer>
+                            <PreviewMode inputs={inputs} />
+                        </PreviewContainer>
+                    )}
+                </div>
+            </>
         );
     }
 }
