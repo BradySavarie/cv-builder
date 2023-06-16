@@ -5,5 +5,5 @@ export const PreviewContainer = styled.div`
     height: 90vh;
     aspect-ratio: 8.5/11;
     margin: 0 auto;
-    overflow-y: scroll;
+    padding: 10px 20px;
 `;
