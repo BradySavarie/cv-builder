@@ -11,4 +11,5 @@ export const StyledModeButton = styled.button`
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s;
+    margin: 20px;
 `;

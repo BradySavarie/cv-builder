@@ -3,8 +3,10 @@ import EditMode from './components/editMode/EditMode';
 import PreviewMode from './components/previewMode/PreviewMode';
 import uniquid from 'uniquid';
 import GlobalStyles from './components/styles/Global';
+import { StyledModeButton } from './components/styles/StyledModeButton';
 import { PreviewContainer } from './components/styles/PreviewContainer';
 import { EditContainer } from './components/styles/EditContainer';
+import { StyledHeader } from './components/styles/StyledHeader';
 
 class App extends Component {
     constructor() {
@@ -21,7 +23,6 @@ class App extends Component {
                         location: '',
                         phoneNumber: '',
                         emailAddress: '',
-                        bio: '',
                     },
                 ],
                 experience: [
@@ -73,7 +74,6 @@ class App extends Component {
                         location: 'Toronto, ON',
                         phoneNumber: '(555) 555 5555',
                         emailAddress: 'johndoe@gmail.com',
-                        bio: 'Software developer available for hire in Toronto, Ontario',
                     },
                 ],
                 experience: [
@@ -209,10 +209,18 @@ class App extends Component {
         return (
             <>
                 <GlobalStyles />
-                <div>
-                    <button onClick={this.handleModeChange}>
-                        {mode === 'edit' ? 'Preview' : 'Edit'}
-                    </button>
+                <StyledHeader>CV Builder</StyledHeader>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <StyledModeButton onClick={this.handleModeChange}>
+                        {mode === 'edit' ? 'Preview Mode' : 'Edit Mode'}
+                    </StyledModeButton>
+
                     {mode === 'edit' ? (
                         <EditContainer>
                             <EditMode

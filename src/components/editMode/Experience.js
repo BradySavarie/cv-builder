@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { StyledForm } from '../styles/StyledForm';
+import { StyledSectionHeading } from '../styles/StyledSectionHeading';
+import { StyledSectionButton } from '../styles/StyledSectionButton';
 
 class Experience extends Component {
     render() {
@@ -11,70 +14,70 @@ class Experience extends Component {
 
         return (
             <div>
+                <StyledSectionHeading>Experience</StyledSectionHeading>
                 {inputs.map((input) => (
                     <div key={input.key}>
-                        <form data-key={input.key}>
-                            <label htmlFor="company">Company</label>
+                        <StyledForm data-key={input.key}>
                             <input
-                                id="company"
                                 type="text"
                                 name="company"
                                 value={input.company}
-                                placeholder="Apple Inc."
+                                placeholder="Company"
                                 onChange={handleInputChange}
                                 data-component="experience"
                             ></input>
-                            <label htmlFor="title">Title</label>
+
                             <input
                                 type="text"
                                 name="title"
                                 value={input.title}
-                                placeholder="Software Developer"
+                                placeholder="Title"
                                 onChange={handleInputChange}
                                 data-component="experience"
                             ></input>
-                            <label htmlFor="startDate">Start Date</label>
+
                             <input
-                                id="startDate"
                                 type="text"
                                 name="startDate"
                                 value={input.startDate}
-                                placeholder="Month, Year"
+                                placeholder="Start Date"
                                 onChange={handleInputChange}
                                 data-component="experience"
                             ></input>
-                            <label htmlFor="endDate">End Date</label>
+
                             <input
-                                id="endDate"
                                 type="text"
                                 name="endDate"
                                 value={input.endDate}
-                                placeholder="Month, Year"
+                                placeholder="End Date"
                                 onChange={handleInputChange}
                                 data-component="experience"
                             ></input>
-                            <label htmlFor="description">Description</label>
+
                             <textarea
                                 id="description"
                                 name="description"
                                 value={input.description}
-                                placeholder="Design and build applications for the iOS platform"
+                                placeholder="Job Description"
                                 onChange={handleInputChange}
                                 data-component="experience"
                             ></textarea>
-                        </form>
-                        <button
+                        </StyledForm>
+                        <StyledSectionButton
                             onClick={handleDeleteSection}
                             data-key={input.key}
                             data-component="experience"
                         >
                             Delete Experience
-                        </button>
+                        </StyledSectionButton>
                     </div>
                 ))}
-                <button onClick={handleAddSection} data-component="experience">
+                <StyledSectionButton
+                    onClick={handleAddSection}
+                    data-component="experience"
+                >
                     Add Experience
-                </button>
+                </StyledSectionButton>
             </div>
         );
     }

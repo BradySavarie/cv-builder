@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { StyledForm } from '../styles/StyledForm';
+import { StyledSectionHeading } from '../styles/StyledSectionHeading';
 
 class PersonalInfo extends Component {
     render() {
@@ -8,67 +10,55 @@ class PersonalInfo extends Component {
             <div>
                 {inputs.map((input) => (
                     <div key={input.key}>
-                        <form data-key={input.key}>
-                            <label htmlFor="firstName">First Name</label>
+                        <StyledSectionHeading>
+                            Personal Info
+                        </StyledSectionHeading>
+                        <StyledForm data-key={input.key}>
                             <input
-                                id="firstName"
                                 type="text"
                                 name="firstName"
                                 value={input.firstName}
-                                placeholder="John"
+                                placeholder="First name"
                                 onChange={handleInputChange}
                                 data-component="personalInfo"
                             />
-                            <label htmlFor="lastName">Last Name</label>
+
                             <input
-                                id="lastName"
                                 type="text"
                                 name="lastName"
                                 value={input.lastName}
-                                placeholder="Doe"
+                                placeholder="Last Name"
                                 onChange={handleInputChange}
                                 data-component="personalInfo"
                             />
-                            <label htmlFor="location">Location</label>
+
                             <input
-                                id="location"
                                 type="text"
                                 name="location"
                                 value={input.location}
-                                placeholder="City, Province"
+                                placeholder="Location"
                                 onChange={handleInputChange}
                                 data-component="personalInfo"
                             />
-                            <label htmlFor="phoneNumber">Phone Number</label>
+
                             <input
-                                id="phoneNumber"
                                 type="tel"
                                 name="phoneNumber"
                                 value={input.phoneNumber}
-                                placeholder="(555) 555 5555"
+                                placeholder="Phone Number"
                                 onChange={handleInputChange}
                                 data-component="personalInfo"
                             />
-                            <label htmlFor="emailAddress">Email Address</label>
+
                             <input
-                                id="emailAddress"
                                 type="email"
                                 name="emailAddress"
                                 value={input.emailAddress}
-                                placeholder="johndoe@gmail.com"
+                                placeholder="Email Address"
                                 onChange={handleInputChange}
                                 data-component="personalInfo"
                             />
-                            <label htmlFor="bio">Bio</label>
-                            <textarea
-                                id="bio"
-                                name="bio"
-                                value={input.bio}
-                                placeholder="Software developer available for hire in Toronto, Ontario"
-                                onChange={handleInputChange}
-                                data-component="personalInfo"
-                            ></textarea>
-                        </form>
+                        </StyledForm>
                     </div>
                 ))}
             </div>

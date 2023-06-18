@@ -8,11 +8,14 @@ class PersonalInfo extends Component {
             <div>
                 {inputs.map((input) => (
                     <div key={input.key}>
-                        <p>{input.firstName}</p>
-                        <p>{input.lastName}</p>
-                        <p>{input.location}</p>
-                        <p>{input.phoneNumber}</p>
-                        <p>{input.emailAddress}</p>
+                        <h1>
+                            {input.firstName} {input.lastName}
+                        </h1>
+                        <p>
+                            {input.emailAddress} • {input.phoneNumber} •{' '}
+                            {input.location}
+                        </p>
+
                         <p>{input.bio}</p>
                     </div>
                 ))}

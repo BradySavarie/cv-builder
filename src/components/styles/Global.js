@@ -64,6 +64,10 @@ ul {
     padding-left: 24px;
     padding-right: 24px;
 }
+
+textarea {
+    font-family: inherit;
+}
 `;
 
 export default GlobalStyles;
