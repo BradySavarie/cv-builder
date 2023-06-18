@@ -3,7 +3,9 @@ import EditMode from './components/editMode/EditMode';
 import PreviewMode from './components/previewMode/PreviewMode';
 import uniquid from 'uniquid';
 import GlobalStyles from './components/styles/Global';
-import { StyledModeButton } from './components/styles/StyledModeButton';
+import { StyledButtonContainer } from './components/styles/StyledButtonContainer';
+import { StyledMainButton } from './components/styles/StyledMainButton';
+import { StyledSecondaryButton } from './components/styles/StyledSecondaryButton';
 import { PreviewContainer } from './components/styles/PreviewContainer';
 import { EditContainer } from './components/styles/EditContainer';
 import { StyledHeader } from './components/styles/StyledHeader';
@@ -217,9 +219,19 @@ class App extends Component {
                         alignItems: 'center',
                     }}
                 >
-                    <StyledModeButton onClick={this.handleModeChange}>
-                        {mode === 'edit' ? 'Preview Mode' : 'Edit Mode'}
-                    </StyledModeButton>
+                    <StyledButtonContainer>
+                        <StyledSecondaryButton
+                            onClick={this.handleCreateSample}
+                        >
+                            Create Sample
+                        </StyledSecondaryButton>
+                        <StyledMainButton onClick={this.handleModeChange}>
+                            {mode === 'edit' ? 'Preview Mode' : 'Edit Mode'}
+                        </StyledMainButton>
+                        <StyledSecondaryButton onClick={this.handleReset}>
+                            Reset
+                        </StyledSecondaryButton>
+                    </StyledButtonContainer>
 
                     {mode === 'edit' ? (
                         <EditContainer>
@@ -228,8 +240,6 @@ class App extends Component {
                                 handleInputChange={this.handleInputChange}
                                 handleAddSection={this.handleAddSection}
                                 handleDeleteSection={this.handleDeleteSection}
-                                handleReset={this.handleReset}
-                                handleCreateSample={this.handleCreateSample}
                             />
                         </EditContainer>
                     ) : (

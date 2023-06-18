@@ -10,4 +10,6 @@ export const StyledSectionHeading = styled.div`
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 5px;
 `;

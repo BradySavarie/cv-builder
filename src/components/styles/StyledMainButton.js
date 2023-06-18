@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledModeButton = styled.button`
+export const StyledMainButton = styled.button`
     background-color: #333;
     width: 150px;
     color: #fff;
@@ -12,4 +12,16 @@ export const StyledModeButton = styled.button`
     outline: none;
     transition: background-color 0.3s;
     margin: 20px;
+    transform: scale(1.3);
+
+    &:hover {
+        background-color: #fff;
+        color: black;
+        outline: 2px solid #ccc;
+    }
+
+    &:active {
+        outline: 1px solid black;
+        transform: scale(1.25);
+    }
 `;
