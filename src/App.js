@@ -27,41 +27,10 @@ class App extends Component {
                         emailAddress: '',
                     },
                 ],
-                experience: [
-                    {
-                        key: uniquid(),
-                        company: '',
-                        title: '',
-                        startDate: '',
-                        endDate: '',
-                        description: '',
-                    },
-                ],
-                education: [
-                    {
-                        key: uniquid(),
-                        school: '',
-                        fieldOfStudy: '',
-                        qualification: '',
-                        enrollmentDate: '',
-                        graduationDate: '',
-                    },
-                ],
-                projects: [
-                    {
-                        key: uniquid(),
-                        title: '',
-                        description: '',
-                        liveLink: '',
-                        repoLink: '',
-                    },
-                ],
-                skills: [
-                    {
-                        key: uniquid(),
-                        description: '',
-                    },
-                ],
+                experience: [],
+                education: [],
+                projects: [],
+                skills: [],
             },
         };
 
@@ -82,11 +51,20 @@ class App extends Component {
                     {
                         key: uniquid(),
                         company: 'Apple Inc.',
-                        title: 'Software Developer',
+                        title: 'Senior Software Developer',
+                        startDate: 'February, 2023',
+                        endDate: 'Present',
+                        description:
+                            'Design and build applications for the iOS platform',
+                    },
+                    {
+                        key: uniquid(),
+                        company: 'Facebook',
+                        title: 'Junior Software Developer',
                         startDate: 'January, 2019',
                         endDate: 'January, 2023',
                         description:
-                            'Design and build applications for the iOS platform',
+                            'Contributed to a feature on Messenger that reached 50 million users in 30 days',
                     },
                 ],
                 education: [
@@ -94,16 +72,25 @@ class App extends Component {
                         key: uniquid(),
                         school: 'Harvard University',
                         fieldOfStudy: 'Computer Science',
-                        qualification: 'Bachelors of Science',
+                        qualification: 'BSc',
                         enrollmentDate: 'September, 2015',
                         graduationDate: 'April, 2018',
+                    },
+                    {
+                        key: uniquid(),
+                        school: 'Yale University',
+                        fieldOfStudy: 'Economics',
+                        qualification: 'BBA',
+                        enrollmentDate: 'September, 2011',
+                        graduationDate: 'April, 2014',
                     },
                 ],
                 projects: [
                     {
                         key: uniquid(),
                         title: 'CV Builder',
-                        description: 'Auto-generates a formatted resume',
+                        description:
+                            'Automatically generates a resume in a structured format that is compatible with ATS software and can be easily parsed and extracted for data analysis purposes. The resume you are reading now was created using cv builder!',
                         liveLink: 'www.cv-builder.com',
                         repoLink: 'www.github.com/cv-builder',
                     },
@@ -112,6 +99,18 @@ class App extends Component {
                     {
                         key: uniquid(),
                         description: 'React',
+                    },
+                    {
+                        key: uniquid(),
+                        description: 'Typescript',
+                    },
+                    {
+                        key: uniquid(),
+                        description: 'Tailwind',
+                    },
+                    {
+                        key: uniquid(),
+                        description: 'Sass',
                     },
                 ],
             },

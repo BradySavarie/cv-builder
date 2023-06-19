@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledPreviewSectionContainer = styled.div`
-    padding: 5px 10px;
+    padding: 2px 10px;
 
     .experienceContainer {
         display: flex;

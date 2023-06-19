@@ -11,8 +11,8 @@ class Projects extends Component {
                 <StyledPreviewSectionHeader>
                     Projects
                 </StyledPreviewSectionHeader>
-                {inputs.map((input) => (
-                    <StyledPreviewSectionContainer>
+                <StyledPreviewSectionContainer>
+                    {inputs.map((input) => (
                         <div className="projectContainer" key={input.key}>
                             <div className="projectDataContainer">
                                 <p className="title">{input.title}</p>
@@ -30,8 +30,8 @@ class Projects extends Component {
                                 </p>
                             </div>
                         </div>
-                    </StyledPreviewSectionContainer>
-                ))}
+                    ))}
+                </StyledPreviewSectionContainer>
             </>
         );
     }
