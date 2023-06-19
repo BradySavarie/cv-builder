@@ -12,6 +12,6 @@ export const StyledPersonalInfoContainer = styled.div`
     }
 
     p {
-        font-size: 1em;
+        font-size: 12px;
     }
 `;

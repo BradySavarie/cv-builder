@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
+import { StyledPreviewSectionHeader } from '../styles/StyledPreviewSectionHeader';
+import { StyledPreviewSectionContainer } from '../styles/StyledPreviewSectionContainer';
 
 class Skills extends Component {
     render() {
         const { inputs } = this.props;
 
         return (
-            <div>
-                {inputs.map((input) => (
-                    <div key={input.key}>
-                        <p>{input.description}</p>
-                    </div>
-                ))}
-            </div>
+            <>
+                <StyledPreviewSectionHeader>Skills</StyledPreviewSectionHeader>
+                <StyledPreviewSectionContainer>
+                    {inputs.map((input) => (
+                        <ul className="skillsContainer" key={input.key}>
+                            <li>{input.description}</li>
+                        </ul>
+                    ))}
+                </StyledPreviewSectionContainer>
+            </>
         );
     }
 }
