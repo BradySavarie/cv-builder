@@ -8,9 +8,11 @@ class Experience extends Component {
 
         return (
             <>
-                <StyledPreviewSectionHeader>
-                    Experience
-                </StyledPreviewSectionHeader>
+                {inputs.length !== 0 && (
+                    <StyledPreviewSectionHeader>
+                        Experience
+                    </StyledPreviewSectionHeader>
+                )}
                 <StyledPreviewSectionContainer>
                     {inputs.map((input) => (
                         <div className="experienceContainer" key={input.key}>

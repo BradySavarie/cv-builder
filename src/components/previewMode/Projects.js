@@ -8,9 +8,12 @@ class Projects extends Component {
 
         return (
             <>
-                <StyledPreviewSectionHeader>
-                    Projects
-                </StyledPreviewSectionHeader>
+                {inputs.length !== 0 && (
+                    <StyledPreviewSectionHeader>
+                        Projects
+                    </StyledPreviewSectionHeader>
+                )}
+
                 <StyledPreviewSectionContainer>
                     {inputs.map((input) => (
                         <div className="projectContainer" key={input.key}>

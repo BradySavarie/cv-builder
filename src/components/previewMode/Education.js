@@ -8,9 +8,12 @@ class Education extends Component {
 
         return (
             <>
-                <StyledPreviewSectionHeader>
-                    Education
-                </StyledPreviewSectionHeader>
+                {inputs.length !== 0 && (
+                    <StyledPreviewSectionHeader>
+                        Education
+                    </StyledPreviewSectionHeader>
+                )}
+
                 <StyledPreviewSectionContainer>
                     {inputs.map((input) => (
                         <div className="educationContainer" key={input.key}>

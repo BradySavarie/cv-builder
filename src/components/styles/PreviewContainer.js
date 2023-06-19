@@ -8,4 +8,5 @@ export const PreviewContainer = styled.div`
     margin: 0 auto;
     margin-bottom: 20px;
     padding: 10px 20px;
+    overflow-y: hidden;
 `;

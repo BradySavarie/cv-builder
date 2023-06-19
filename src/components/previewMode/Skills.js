@@ -8,7 +8,12 @@ class Skills extends Component {
 
         return (
             <>
-                <StyledPreviewSectionHeader>Skills</StyledPreviewSectionHeader>
+                {inputs.length !== 0 && (
+                    <StyledPreviewSectionHeader>
+                        Skills
+                    </StyledPreviewSectionHeader>
+                )}
+
                 <StyledPreviewSectionContainer>
                     {inputs.map((input) => (
                         <ul className="skillsContainer" key={input.key}>
