@@ -9,6 +9,7 @@ import { StyledSecondaryButton } from './components/styles/StyledSecondaryButton
 import { PreviewContainer } from './components/styles/PreviewContainer';
 import { EditContainer } from './components/styles/EditContainer';
 import { StyledHeader } from './components/styles/StyledHeader';
+import { DownloadPDFButton } from './components/styles/DownloadPDFButton';
 
 class App extends Component {
     constructor() {
@@ -242,9 +243,14 @@ class App extends Component {
                             />
                         </EditContainer>
                     ) : (
-                        <PreviewContainer>
-                            <PreviewMode inputs={inputs} />
-                        </PreviewContainer>
+                        <>
+                            <PreviewContainer>
+                                <PreviewMode inputs={inputs} />
+                            </PreviewContainer>
+                            <DownloadPDFButton>
+                                Download as PDF
+                            </DownloadPDFButton>
+                        </>
                     )}
                 </div>
             </>
