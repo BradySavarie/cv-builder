@@ -9,3 +9,13 @@
 Live Link: 
 
 <hr>
+
+This application is a part of The Odin Projects Full-Stack Javascript curriculum and was developed with the purpose of learning React and Styled Components. The main challenges I faced were learning how to create class components, works with props and state, and use the styled-components approach to writing css.
+
+<h3>Built With:</h3>
+
+<ul>
+  <li>React
+  <li>Styled Components
+  <li>Create-react-app
+ </ul>
