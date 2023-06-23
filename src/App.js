@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import EditMode from './components/editMode/EditMode';
 import PreviewMode from './components/previewMode/PreviewMode';
 import uniquid from 'uniquid';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import GlobalStyles from './components/styles/Global';
 import { StyledButtonContainer } from './components/styles/StyledButtonContainer';
 import { StyledMainButton } from './components/styles/StyledMainButton';
@@ -114,6 +116,7 @@ const App = () => {
         },
     };
 
+    const printRef = React.useRef();
     const [state, setState] = useState(initialState);
 
     const handleModeChange = () => {
@@ -198,6 +201,21 @@ const App = () => {
         setState(sampleData);
     };
 
+    const handleDownloadPdf = async () => {
+        const element = printRef.current;
+        const canvas = await html2canvas(element);
+        const data = canvas.toDataURL('image/png');
+
+        const pdf = new jsPDF();
+        const imgProperties = pdf.getImageProperties(data);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight =
+            (imgProperties.height * pdfWidth) / imgProperties.width;
+
+        pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('resume.pdf');
+    };
+
     return (
         <>
             <GlobalStyles />
@@ -232,10 +250,12 @@ const App = () => {
                     </EditContainer>
                 ) : (
                     <>
-                        <PreviewContainer>
+                        <PreviewContainer ref={printRef}>
                             <PreviewMode inputs={state.inputs} />
                         </PreviewContainer>
-                        <DownloadPDFButton>Download as PDF</DownloadPDFButton>
+                        <DownloadPDFButton onClick={handleDownloadPdf}>
+                            Download as PDF
+                        </DownloadPDFButton>
                     </>
                 )}
             </div>
