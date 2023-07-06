@@ -6,7 +6,7 @@
 
 <em>This application enables users to create a professional resume that seamlessly integrates with applicant tracking systems (ATS), eliminating the need for manual data correction and retyping. Users can easily switch between edit and preview modes to visualize the automated formatting of their resume as they write. By clicking the Create Sample button, users can view a completed resume example, and the reset option clears all fields. Once completed, the resume can be downloaded as a PDF.</em>
 
-Live Link: bradysavarie.github.io/cv-builder/
+Live Link: [bradysavarie.github.io/cv-builder/](https://bradysavarie.github.io/cv-builder/)
 
 <hr>
 
